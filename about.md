@@ -14,19 +14,20 @@ Céline Phan & Dilva Maupou
 
 ## Intérêt scientifique des données et de ce catalogue
 
-- Recenser une liste d'objets
-- Pouvoir obtenir les caractéristiques de chaque objet et povouroir les étudier facilement (par exemple en les comparant avec des données extérieures).
+- Recenser une liste d'objets ou pouvoir trouver un objet ou une liste d'objets à partir d'une caractéristique
+- Pouvoir obtenir les caractéristiques de chaque objet afin de les étudier facilement (par exemple en les comparant avec des données extérieures).
 
 
 ## Fonctionnalités minimales de l'outil de consultation
 
-- Donner pour chaque objet son nom, sa correspondance MESSIER/NGC, son type (nébulseuse, amas d'étoiles..), sa constellation, ses caractéristiques, une image.
+- Donner la liste de tous les objets
+- Donner pour chaque objet son nom, sa correspondance MESSIER/NGC, son type (nébuleuse, amas d'étoiles..), sa constellation, ses caractéristiques, une image.
 
 
 ## Fonctionnalités idéales de l'outil
 
 - Pouvoir retrouver un objet par ses caractéristiques.
-
+- Interface
 
 ## Technologies pressenties
 

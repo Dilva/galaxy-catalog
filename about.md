@@ -1,4 +1,4 @@
-# Catalogue de Galxies - Projet Data, Web & API 
+# Catalogue de Galaxies - Projet Data, Web & API 
 
 ---
 

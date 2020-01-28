@@ -1,8 +1,13 @@
 """
 Database access module
+Usage :
+
+get_all_objects()
+get_objects(['ngc_id', 'constellation_latin'], {'season':'Autumn', 'type':'Galaxy'})
 """
 
 import sqlite3
+import json
 
 
 COLUMNS = ["messier_id", "ngc_id", "type", "season", "magnitude", "constellation_en", "constellation_fr", 
@@ -17,19 +22,26 @@ def get_all_objects():
     Returns :
     dict(dict) : all objects
     """
-
+    
+    # Database connection 
+    conn = sqlite3.connect('messier_catalog.db')
     c = conn.cursor()
+
+    # Select all object query
     c.execute("SELECT * FROM objects")
     rows = c.fetchall()
 
+    # Closing connection
+    conn.close()
+
+    # Found objects to dict {id : {obj}}
     objects = {k[0]:{} for k in rows}
     for row in rows:
         obj = {col:"" for col in COLUMNS[1:]}
         for i in range(1, len(row)):
             obj[COLUMNS[i]] = row[i]
         objects[row[0]] = obj
-
-    return objects
+    return json.dumps(objects)
 
 def get_objects(columns, filter):
     """
@@ -44,13 +56,22 @@ def get_objects(columns, filter):
     dict : found objects as {0 : {object}, 1 : {object}}
     """
 
+    # Database connection
+    conn = sqlite3.connect('messier_catalog.db')
     c = conn.cursor()
+    
+    # Creating queries
     column_query = ",".join(col for col in columns)
     filter_query = ' and '.join(k + "='" + v +"'" for k,v in filter.items())
-    #print("SELECT " + column_query + " FROM objects where " + filter_query)
+    
+    # Querying database
     c.execute("SELECT " + column_query + " FROM objects where " + filter_query)
     rows = c.fetchall()
 
+    # Close connection
+    conn.close()
+
+    # Found objects to dict {cpt : {obj}}
     objects = {i:{} for i in range(len(rows))}
     i = 0
     if columns == ["*"]:
@@ -61,14 +82,4 @@ def get_objects(columns, filter):
             obj[columns[j]] = row[j]
         objects[i] = obj
         i += 1
-    return objects
-
-
-# Connection with the database
-conn = sqlite3.connect('messier_catalog.db')
-
-#print(get_all_objects())
-#print(get_objects(['ngc_id', 'constellation_latin'], {'season':'Autumn', 'type':'Galaxy'}))
-
-# Closing connection
-conn.close()
+    return json.dumps(objects)

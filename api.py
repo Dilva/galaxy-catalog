@@ -1,23 +1,25 @@
-from flask import Flask
-
+from flask import Flask, request, render_template
 import database_access as dba
 
 
 app = Flask(__name__)
 @app.route('/')
 def func():
-    return "Galaxy Catalog"
+    # Home page
+    return render_template("")
 
 
-@app.route('/api1')
+@app.route('/catalog')
 def func1():
+    # Returns all objects
     return dba.get_all_objects()
     
 
-@app.route('/api2')
+@app.route('/objects', methods=['GET'])
 def func2():
-    return dba.get_objects(['ngc_id', 'constellation_latin'], {'season':'Autumn', 'type':'Galaxy'})
-
+    # Gets entered arguments and returns all filtered objects
+    return dba.get_objects(['*'], request.args) 
+    
 
 if __name__ == '__main__':
     app.run(debug=True)

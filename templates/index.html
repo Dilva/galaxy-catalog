@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Galaxy Catalog Home</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/jpg" href="./static/images/icons/favicon.ico"/>
+	<link rel="stylesheet" type="text/css" href="./static/vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="./static/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="./static/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+	<link rel="stylesheet" type="text/css" href="./static/vendor/animate/animate.css">
+	<link rel="stylesheet" type="text/css" href="./static/vendor/css-hamburgers/hamburgers.min.css">
+	<link rel="stylesheet" type="text/css" href="./static/vendor/animsition/css/animsition.min.css">
+	<link rel="stylesheet" type="text/css" href="./static/vendor/select2/select2.min.css">
+	<link rel="stylesheet" type="text/css" href="./static/vendor/daterangepicker/daterangepicker.css">
+	<link rel="stylesheet" type="text/css" href="./static/css/util.css">
+	<link rel="stylesheet" type="text/css" href="./static/css/main.css">
+</head>
+<body>
+
+
+	<div class="container-contact100">
+		<div class="wrap-contact100">
+			<form class="contact100-form validate-form" action="/objects" method="GET">
+				<span class="contact100-form-title">
+					Explore Messier Catalog 		
+				</span>
+
+				<button class="contact100-form-btn">
+					<a href="/catalog" style="color:white">Discover the whole Messier Catalog</a>
+				</button>
+
+				<br><h5><center>Or look for a specific object :</center></h5><br>
+
+				<div class="wrap-input100" >
+					<label class="label-input100">Messier ID</label>
+					<input class="input100" type="text" name="messier_id" placeholder="Enter the Messier Identifiant">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100">
+					<label class="label-input100" for="ngc_id">NGC</label>
+					<input class="input100" type="text" name="ngc_id" placeholder="Enter the NGC">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100">
+					<label class="label-input100" for="type">Object Type</label>
+					<input class="input100" type="text" name="type" placeholder="Enter the Object Type">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100">
+					<div class="label-input100">Season</div>
+					<div>
+						<select class="js-select2" name="season">
+							<option></option>
+							<option>Autumn</option>
+							<option>Winter</option>
+							<option>Spring</option>
+							<option>Summer</option>
+						</select>
+						<div class="dropDownSelect2"></div>
+					</div>
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100">
+					<div class="label-input100">Magnitude</div>
+					<div>
+						<select class="js-select2" name="magnitude">
+							<option placeholder="Select a magnitude"></option>
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+							<option>6</option>
+							<option>7</option>
+							<option>8</option>
+							<option>9</option>
+							<option>10</option>
+							<option>11</option>
+						</select>
+						<div class="dropDownSelect2"></div>
+					</div>
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100">
+					<label class="label-input100" for="constellation_en">Constellation (EN)</label>
+					<input class="input100" type="text" name="constellation_en" placeholder="Enter the constellation's name in English">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 ">
+					<label class="label-input100" for="constellation_fr">Constellation (FR)</label>
+					<input class="input100" type="text" name="constellation_fr" placeholder="Enter the constellation's name in French">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100">
+					<label class="label-input100" for="constellation_latin">Constellation (Latin)</label>
+					<input class="input100" type="text" name="constellation_latin" placeholder="Enter the constellation's name in Latin">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100">
+					<label class="label-input100" for="discoverer">Discover</label>
+					<input class="input100" type="text" name="discoverer" placeholder="Who discovered this object ?">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100">
+					<label class="label-input100" for="year">Year</label>
+					<input class="input100" type="number" name="year" placeholder="What year was this object discovered ?">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="container-contact100-form-btn">
+					<input type="submit" value="Submit to infinity, and beyond !" class="contact100-form-btn"></input>
+				</div>				
+
+				<br><br>
+				<center><h6 style="color:black">By Dilva Maupou & Céline Phan</h6></center>
+			</form>
+
+			<div class="contact100-more flex-col-c-m" style="background-image: url('./static/images/space.jpg');">
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+<!--===============================================================================================-->
+	<script src="./static/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="./static/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="./static/vendor/bootstrap/js/popper.js"></script>
+	<script src="./static/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="./static/vendor/select2/select2.min.js"></script>
+	<script>
+		$(".js-select2").each(function(){
+			$(this).select2({
+				minimumResultsForSearch: 20,
+				dropdownParent: $(this).next('.dropDownSelect2')
+			});
+		})
+		$(".js-select2").each(function(){
+			$(this).on('select2:open', function (e){
+				$(this).parent().next().addClass('eff-focus-selection');
+			});
+		});
+		$(".js-select2").each(function(){
+			$(this).on('select2:close', function (e){
+				$(this).parent().next().removeClass('eff-focus-selection');
+			});
+		});
+
+	</script>
+<!--===============================================================================================-->
+	<script src="./static/vendor/daterangepicker/moment.min.js"></script>
+	<script src="./static/vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="./static/vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="./static/js/main.js"></script>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<!--script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-23581568-13');
+	</script-->
+</body>
+</html>

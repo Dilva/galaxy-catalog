@@ -6,7 +6,7 @@ app = Flask(__name__)
 @app.route('/')
 def func():
     # Home page
-    return render_template("")
+    return render_template("index.html")
 
 
 @app.route('/catalog')

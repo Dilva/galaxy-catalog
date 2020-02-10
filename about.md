@@ -12,8 +12,6 @@ Céline Phan & Dilva Maupou
   
   Source : https://www.datastro.eu/explore/dataset/catalogue-de-messier/
 
-- Peut-être quelques objets du NGC supplémentaires, parmi les plus connus
-
 
 ## Intérêt scientifique des données et de ce catalogue
 
@@ -26,7 +24,6 @@ Céline Phan & Dilva Maupou
 - Donner la liste de tous les objets du catalogue.
 - Donner pour un objet particulier ses caractéristiques : son nom, sa correspondance MESSIER/NGC, son type (nébuleuse, amas d'étoiles..), sa constellation, une image, etc.
 - Trouver un objet ou une liste d'objets depuis une caractéristique.
-- Pouvoir choisir les données à récupérer (par exemple, uniquement la taille et la constellation). 
 
 
 ## Fonctionnalités idéales de l'outil

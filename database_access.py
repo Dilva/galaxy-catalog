@@ -8,11 +8,13 @@ get_objects(['ngc_id', 'constellation_latin'], {'season':'Autumn', 'type':'Galax
 
 import sqlite3
 import json
-
+import os.path
 
 COLUMNS = ["messier_id", "ngc_id", "type", "season", "magnitude", "constellation_en", "constellation_fr", 
 "constellation_latin", "ra", "dec", "distance", "size", "discoverer", "year", "image", "constellation_id"]
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+db_path = os.path.join(BASE_DIR, "messier_catalog.db")
 
 def get_all_objects():
     """
@@ -24,7 +26,7 @@ def get_all_objects():
     """
     
     # Database connection 
-    conn = sqlite3.connect('messier_catalog.db')
+    conn = sqlite3.connect(db_path)
     c = conn.cursor()
 
     # Select all object query
@@ -57,7 +59,7 @@ def get_objects(columns, filter):
     """
 
     # Database connection
-    conn = sqlite3.connect('messier_catalog.db')
+    conn = sqlite3.connect(db_path)
     c = conn.cursor()
     
     # Creating queries

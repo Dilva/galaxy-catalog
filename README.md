@@ -34,7 +34,7 @@ python api.py
 
 **Récupérer le catalogue entier :**
 ```python
-api.py/catalog
+/catalog
 ```
 
 ou bien cliquer sur le lien "➤ Discover the whole Messier Catalog" de l'interface.
@@ -44,6 +44,6 @@ ou bien cliquer sur le lien "➤ Discover the whole Messier Catalog" de l'interf
 
 **Récupérer des objets particuliers :**
 ```python
-api.py/objects?type=Galaxy&season=Autumn
+/objects?type=Galaxy&season=Autumn
 ```
 ou bien remplir le formulaire de l'interface.
